@@ -1,24 +1,20 @@
 #' tes0020 PDF Template
 #'
-#' @param logo File path to Company logo file. The logo will be printed on
+#' @param logo File path to institution logo file. The logo will be printed on
 #' the top right corner of the first page and the size will be adjusted to
-#' `logo_height`.
-#' @param company Company Name as the page footnote. You can input a list of 
-#' values, such as company name, address, telephone and email.
-#' @param short_title A shorten version of the title to be printed on the 
+#' `logo_height`. The default is the TalTech logo.
+#' @param institution Information about the institution as the page footnote. You can input a list of
+#' values.
+#' @param short_title A shorter version of the title to be printed on the
 #' top-right corner of every page, except the front page.
-#' @param watermark Watermark Text to be printed on the page. You can change
+#' @param watermark Watermark text to be printed on the page. You can change
 #' its color via `watermark_color`.
-#' @param confidential T/F value for whether a red confidential sign will
-#' be printed.
 #' @param libertine T/F. Libertine is a collection of open fonts for western
-#' languages. We found it fits this template quite well. Default is `FALSE` 
-#' though we highly recommend you to turn it on.
-#' @param chinese T/F for Chinese language support. Default is `FALSE`.
+#' languages. Default is `TRUE`.
 #' @param logo_height Height of the logo image. This logo image will be scaled
-#' to height and the default height is 1.2cm.
+#' to height and the default height is 4cm.
 #' @param watermark_color Color for the watermark text. Default is "gray".
-#' @param footer_on_first_page T/F value for whether the company info footer 
+#' @param footer_on_first_page T/F value for whether the institution info footer 
 #' will be displayed on the front page.
 #' @param toc T/F value for table of contents. See ?rmarkdown::pdf_document
 #' for details
@@ -36,14 +32,15 @@
 #' @import knitr
 #' 
 #' @export
-pdf_worksheet <- function(logo = NULL, company = NULL, short_title = NULL,
-                     watermark = NULL, confidential = FALSE,
-                     libertine = FALSE, chinese = FALSE,
-                     logo_height = "1.2cm", watermark_color = "gray",
-                     footer_on_first_page = TRUE,
-                     toc = FALSE, lot = FALSE, lof = FALSE,
-                     fancy_captions = TRUE,
-                     number_sections = TRUE, latex_engine = "xelatex", ...) {
+pdf_worksheet <- function(logo = system.file("rmarkdown/templates/tes0020/resources/taltech.pdf",
+                                         package = "tes0020"),
+                          institution = NULL, short_title = NULL,
+                          watermark = NULL, libertine = TRUE,
+                          logo_height = "4cm", watermark_color = "gray",
+                          footer_on_first_page = TRUE,
+                          toc = FALSE, lot = FALSE, lof = FALSE,
+                          fancy_captions = TRUE, number_sections = TRUE,
+                          latex_engine = "xelatex", ...) {
   tes0020_args <- c()
   
   if (!is.null(logo)) {
@@ -51,12 +48,12 @@ pdf_worksheet <- function(logo = NULL, company = NULL, short_title = NULL,
                     pandoc_variable_arg("logo_height", logo_height))
   }
   
-  if (!is.null(company)) {
-    if (is.list(company) && length(company) > 1) {
-      company <- paste(unlist(company), 
+  if (!is.null(institution)) {
+    if (is.list(institution) && length(institution) > 1) {
+      institution <- paste(unlist(institution), 
                        collapse = " \\hspace{.025 in} $\\cdot$ \\hspace{.05 in} ")
     }
-    tes0020_args <- c(tes0020_args, pandoc_variable_arg("company", company))
+    tes0020_args <- c(tes0020_args, pandoc_variable_arg("institution", institution))
   }
   
   if (!is.null(short_title)) {
@@ -68,18 +65,10 @@ pdf_worksheet <- function(logo = NULL, company = NULL, short_title = NULL,
                     pandoc_variable_arg("footer_on_first_page", "yes"))
   }
   
-  if (confidential) {
-    tes0020_args <- c(tes0020_args, pandoc_variable_arg("confidential", "yes"))
-  }
-  
   if (libertine) {
     tes0020_args <- c(tes0020_args, pandoc_variable_arg("libertine", "yes"))
   }
-  
-  if (chinese) {
-    tes0020_args <- c(tes0020_args, pandoc_variable_arg("chinese", "yes"))
-  }
-  
+
   if (!is.null(watermark)) {
     tes0020_args <- c(tes0020_args, pandoc_variable_arg("watermark", watermark),
                     pandoc_variable_arg("watermark_color", watermark_color))
