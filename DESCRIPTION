@@ -1,10 +1,17 @@
 Package: tes0020
 Type: Package
-Title: What the package does (short line)
+Title: A 'rmarkdown' Template for 'TES0020 Statistics' at TalTech
 Version: 1.0
 Date: 2020-03-16
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Heili Hein
+Maintainer: Heili Hein <heili.hein at taltech.ee>
+Description: A rmarkdown template for creating study materials in R for the 'TES0020 Statistics' course at the Tallinn University of Technology. The template was built by tweaking the 'memor' template (https://cran.r-project.org/web/packages/memor/).
+License: GPL-3
+URL: https://github.com/heilih/tes0020
+Imports:
+    yaml,
+    rmarkdown,
+    knitr,
+    utils
+Encoding: UTF-8
 RoxygenNote: 7.1.0
