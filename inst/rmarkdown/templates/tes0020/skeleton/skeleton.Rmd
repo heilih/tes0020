@@ -1,10 +1,15 @@
 ---
-title: "Title"
-author: 
-- Your Name
-- Second Author
-date: "`r Sys.Date()`"
-output: tes0020::pdf_worksheet
+title: "Töölehe pealkiri"
+author: Töölehe autori(d) / hiljem tudengi nimi
+date: "pp.kk.aaaa"
+output:
+  tes0020::pdf_worksheet:
+    company:
+      name: Tallinna Tehnikaülikool
+      department: majandusanalüüsi ja rahanduse instituut
+      course: TES0020 Statistika
+    short_title: lühike pealkiri
+    watermark: POOLELI
 ---
 
 # Sissejuhatus
