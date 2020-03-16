@@ -4,7 +4,7 @@ author: Töölehe autori(d) / hiljem tudengi nimi
 date: "pp.kk.aaaa"
 output:
   tes0020::pdf_worksheet:
-    company:
+    institution:
       name: Tallinna Tehnikaülikool
       department: majandusanalüüsi ja rahanduse instituut
       course: TES0020 Statistika

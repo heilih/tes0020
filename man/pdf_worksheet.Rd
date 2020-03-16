@@ -5,14 +5,13 @@
 \title{tes0020 PDF Template}
 \usage{
 pdf_worksheet(
-  logo = NULL,
-  company = NULL,
+  logo = system.file("rmarkdown/templates/tes0020/resources/taltech.pdf", package =
+    "tes0020"),
+  institution = NULL,
   short_title = NULL,
   watermark = NULL,
-  confidential = FALSE,
-  libertine = FALSE,
-  chinese = FALSE,
-  logo_height = "1.2cm",
+  libertine = TRUE,
+  logo_height = "4cm",
   watermark_color = "gray",
   footer_on_first_page = TRUE,
   toc = FALSE,
@@ -25,34 +24,28 @@ pdf_worksheet(
 )
 }
 \arguments{
-\item{logo}{File path to Company logo file. The logo will be printed on
+\item{logo}{File path to institution logo file. The logo will be printed on
 the top right corner of the first page and the size will be adjusted to
-`logo_height`.}
+`logo_height`. The default is the TalTech logo.}
 
-\item{company}{Company Name as the page footnote. You can input a list of 
-values, such as company name, address, telephone and email.}
+\item{institution}{Information about the institution as the page footnote. You can input a list of
+values.}
 
-\item{short_title}{A shorten version of the title to be printed on the 
+\item{short_title}{A shorter version of the title to be printed on the
 top-right corner of every page, except the front page.}
 
-\item{watermark}{Watermark Text to be printed on the page. You can change
+\item{watermark}{Watermark text to be printed on the page. You can change
 its color via `watermark_color`.}
 
-\item{confidential}{T/F value for whether a red confidential sign will
-be printed.}
-
 \item{libertine}{T/F. Libertine is a collection of open fonts for western
-languages. We found it fits this template quite well. Default is `FALSE` 
-though we highly recommend you to turn it on.}
-
-\item{chinese}{T/F for Chinese language support. Default is `FALSE`.}
+languages. Default is `TRUE`.}
 
 \item{logo_height}{Height of the logo image. This logo image will be scaled
-to height and the default height is 1.2cm.}
+to height and the default height is 4cm.}
 
 \item{watermark_color}{Color for the watermark text. Default is "gray".}
 
-\item{footer_on_first_page}{T/F value for whether the company info footer 
+\item{footer_on_first_page}{T/F value for whether the institution info footer 
 will be displayed on the front page.}
 
 \item{toc}{T/F value for table of contents. See ?rmarkdown::pdf_document
