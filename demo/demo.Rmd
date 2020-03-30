@@ -72,7 +72,7 @@ RMarkdowni kohta on internetis väga palju materjale:
 * matemaatiliste valemite vormistamisel saab abi [siit](https://www.calvin.edu/~rpruim/courses/s341/S17/from-class/MathinRmd.html).
 
 # Kokkuvõte
-Vajuta _Knit_ nuppu ja tekib ilus, tehnikaülikooli logoga PDF fail!
+Vajuta _Knit_ nuppu ja tekib ilus tehnikaülikooli logoga PDF fail!
 
 Uue töölehe tegemiseks tuleb lihtsalt minu tekst ära kustutada ja asendada see uuega.
 
