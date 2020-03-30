@@ -20,7 +20,7 @@ See R Markdowni (RMD) fail koosneb kolmest osast:
 
 1. päis (*header*), kuhu saab märkida töölehe pealkirja, autori jm;
 2. koodiblokid (*code chunks*), kuhu saab lisada R koodi;
-3. tekst, mis koodi selgitab või juhised koodi kirjutamiseks.
+3. tekst, mis koodi selgitab või annab juhised koodi kirjutamiseks.
 
 Kui valida menüüst _File_ -> _Knit Document_ või vajutada _Knit_ nuppu, trükitakse interaktiivse RMD faili asemel PDF fail. Näiteks hindeliste tööde puhul saab tudengitel lasta esitada ainult PDF fail ja nii vältida olukorda, kus õppejõud peab RMD faile jooksutama ja kontrollima, kas kood ikka töötab. Lisaks pole PDF faili avamiseks tarvis RStudio programmi.
 
